@@ -43,3 +43,47 @@ for (let i = 1; i <= 10; i++) {
 // Output: 1 3 5 7 9
 ```
 ---
+## ✅ 2. ``while`` Loop
+The ``while`` loop is used when you don't know how many times to loop. It runs the block as long as the condition is true. The ``while`` loop has one required part – the condition.
+
+You often use an increment or decrement inside the loop body to update variables so that the condition eventually becomes false and the loop stops.
+### 📝 Basic Syntax:
+
+```javascript
+while (condition) {
+    // code to repeat
+    // increment or decrement
+}
+```
+---
+### 🧪 Example: Print numbers from 1 to 10
+```javascript
+let i = 1;
+while (i <= 10) {
+    console.log(i);
+    i++;
+}
+// Output: 1 2 3 4 5 6 7 8 9 10
+```
+### 🧪 Example: Print even numbers from 1 to 10
+```javascript
+let i = 1;
+while (i <= 10) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+    i++;
+}
+// Output: 2 4 6 8 10
+```
+### 🧪 Example: Print odd numbers from 1 to 10
+```javascript
+let i = 1;
+while (i <= 10) {
+    if (i % 2 !== 0) {
+        console.log(i);
+    }
+    i++;
+}
+// Output: 1 3 5 7 9
+```
