@@ -13,3 +13,10 @@ for(let i = 1; i <= 100; i++){
 }
 
 console.log('Sum of even numbers is: ' + sum);
+
+
+// write a program to print each character of a string using for loop
+let programming_language = "JavaScript";
+for(let i = 0; i < programming_language.length; i++){
+    console.log(programming_language[i]);
+}
