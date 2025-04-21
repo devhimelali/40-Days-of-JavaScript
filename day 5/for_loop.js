@@ -20,3 +20,8 @@ let programming_language = "JavaScript";
 for(let i = 0; i < programming_language.length; i++){
     console.log(programming_language[i]);
 }
+
+// write a program to print multiplication table of 5 using for loop
+for(let i = 1; i <= 10; i++){
+    console.log(`5 * ${i} = ` + 5 * i);
+}
