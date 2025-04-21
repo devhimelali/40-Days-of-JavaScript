@@ -108,6 +108,10 @@ do {
 } while (condition);
 ```
 ---
+### 🔄 Flowchart
+
+![Do While Loop Flowchart](https://github.com/devhimelali/40-Days-of-JavaScript/blob/main/Unlocking-the-Power-of-JavaScript-Loops-and-Iterations/do_while_loop.jpg "Do While Loop Flowchart")
+---
 ### 🧪 Example: Greet the user until they enter their name
 ````javascript
 let yourName;
