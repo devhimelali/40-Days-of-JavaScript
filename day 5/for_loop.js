@@ -25,3 +25,12 @@ for(let i = 0; i < programming_language.length; i++){
 for(let i = 1; i <= 10; i++){
     console.log(`5 * ${i} = ` + 5 * i);
 }
+
+// write a program to break the loop when i is 5 using for loop
+for(let i = 1; i <= 10; i++)
+{
+    if(i == 5){
+        break;
+    }
+    console.log(i);
+}
