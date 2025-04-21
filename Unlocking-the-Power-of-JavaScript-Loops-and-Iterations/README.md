@@ -16,6 +16,10 @@ for (initialization; condition; increment/decrement) {
 }
 ```
 ---
+### 🔄 Flowchart
+
+![For Loop Flowchart](https://github.com/devhimelali/40-Days-of-JavaScript/blob/main/Unlocking-the-Power-of-JavaScript-Loops-and-Iterations/for_loop.jpg "For Loop Flowchart")
+
 ### 🧪 Example: Print numbers from 1 to 10
 ```javascript
 for (let i = 1; i <= 10; i++) {
