@@ -133,3 +133,102 @@ greet("Alice"); // Output: Hello, Alice
 | **Syntax** | Defined within an expression. | Uses function keyword with a name. |
 | **Usage** | Useful for callbacks and dynamic functions. | Best for defining reusable functions. |
 
+## 📚 Function Parameters and Arguments
+In JavaScript, parameters and arguments work together to allow functions to accept input and perform tasks using that input.
+
+### 🔹 What Are Parameters?
+- **Parameters** are like placeholders or input variables defined in the function declaration.
+- You can think of **parameters** as labels for the values that the function will receive when it is called.
+
+``` javascript
+function greet(name) {
+  console.log("Hello, " + name);
+}
+```
+➡️ In this example, ``name`` is a **parameter**.
+
+### 🔹 What Are Arguments?
+- Arguments are the actual values passed to the function when it is invoked (called).
+- These values replace the parameters inside the function.
+
+```javascript
+greet("Alice"); // "Alice" is an argument
+```
+➡️ `"Alice"` is the **argument** passed to the greet function.
+
+### ✅ Why Are Parameters and Arguments Useful?
+1. 🔁 **Reusability** – One function can work with different values.
+2. 🎯 **Dynamic Behavior** – You can modify function output based on input.
+3. 🔍 **Cleaner Code** – Helps avoid repeating similar blocks of code.
+
+### 🧪 Example with Multiple Parameters and Arguments:
+```javascript
+function introduce(name, age, profession) {
+  console.log(`Hi, I'm ${name}, a ${age}-year-old ${profession}.`);
+}
+
+introduce("Sara", 30, "developer");
+// Output: Hi, I'm Sara, a 30-year-old developer.
+```
+- Parameters: `name`, `age`, `profession`
+
+- Arguments: `"Sara"`, `30`, `"developer"`
+
+### 🛠 JavaScript Flexibility with Parameters and Arguments
+
+#### 🟢 1. Extra Arguments Are Ignored
+
+```javascript
+function sayHi(name) {
+  console.log("Hi " + name);
+}
+
+sayHi("Tom", "Extra"); // "Extra" is ignored
+```
+
+#### 🟡 2. Missing Arguments Are undefined
+
+```javascript
+function showInfo(name, age) {
+  console.log(name, age);
+}
+
+showInfo("Alex"); // age will be undefined
+```
+#### 🔵 3. Using the arguments Object
+
+- In non-arrow functions, you can access all passed arguments using the **arguments** object.
+
+```javascript
+function total() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+total(1, 2, 3, 4); // Returns 10
+```
+#### 🟣 4. Rest Parameters `(...)`
+
+- Use rest parameters when you want to accept an **unlimited number of arguments**.
+
+```javascript
+function showAll(...items) {
+    items.forEach(item => console.log(item));
+}
+
+showAll("apple", "banana", "cherry");
+
+```
+### 📋 Parameter vs Argument – Summary Table
+| **🔍 Feature** |	**🧪 Parameter** |	**🧪 Argument** |
+|----------------| --- | --- |
+| **Defined In** | Function definition | Function call |
+| **Purpose** | Acts as a placeholder | Actual data passed into function |
+| **Where written** | Inside `()` after `function` keyword | Inside `()` during function invocation |
+| **Can be more/fewer?** | Yes, JS handles missing/excess values | Yes, extra args ignored, missing = `undefined` |
+---
+
+
