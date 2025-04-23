@@ -116,3 +116,20 @@ greet("Alice"); // Output: Hello, Alice
     ```
 ---
 
+### ✅ Advantages of Function Expressions:
+- **Flexibility:** Can be used as callbacks, event handlers, or part of expressions.
+- **Encapsulation:** Keeps the scope limited and avoids polluting the global namespace.
+- **Control Over Execution:** Executes only when explicitly invoked.
+
+### ✅ Disadvantages of Function Expressions:
+- **Not Hoisted:** Function expressions are not hoisted, which means they can only be used after they are defined.
+- **Limited Reusability:** Function expressions are limited to being used as values.
+- **No Name:** Function expressions are often anonymous, which can make them harder to debug.
+
+### ✅ Function Expression vs Declaration:
+| **Feature** | **Function Expression** | **Function Declaration** |
+| --- | --- | ---|
+| **Hoisting** | Not hoisted; defined at runtime. | Hoisted; can be called before definition. |
+| **Syntax** | Defined within an expression. | Uses function keyword with a name. |
+| **Usage** | Useful for callbacks and dynamic functions. | Best for defining reusable functions. |
+
