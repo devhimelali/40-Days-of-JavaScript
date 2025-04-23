@@ -257,10 +257,10 @@ greet();        // Output: Hello, Guest
 
 ### 📌 Why Use Default Parameters?
 
-* ✔️ Avoids `undefined` values.
-* ✔️ Provides fallback values.
-* ✔️ Makes your code cleaner and easier to read.
-* ✔️ Prevents runtime errors when arguments are missing.
+* Avoids `undefined` values.
+* Provides fallback values.
+* Makes your code cleaner and easier to read.
+* Prevents runtime errors when arguments are missing.
 
 ### 🧪 Example with Multiple Defaults:
 ```javascript
@@ -272,3 +272,59 @@ createUser("John", 25);   // User: John, Age: 25
 createUser("Jane");       // User: Jane, Age: 0
 createUser();             // User: Anonymous, Age: 0
 ```
+---
+## 📚 What is a Rest Parameter?
+The **rest parameter** allows a function to accept **an indefinite number of arguments** as an **array**.
+
+It uses the `...` (three dots) syntax and must be the **last parameter** in the function definition.
+
+### 📝 Basic Syntax:
+
+```javascript
+function functionName(...restParameter) {
+  // restParameter is an array
+}
+```
+### 🧪 Example:
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3));         // 6
+console.log(sum(4, 5, 6, 7, 8));   // 30
+```
+➡️ All arguments passed to `sum` are collected into the `numbers` array.
+
+### 🔍 Use Cases:
+1. Handling variable number of arguments:
+
+```javascript
+function showNames(first, ...others) {
+  console.log("First:", first);
+  console.log("Others:", others);
+}
+
+showNames("Alice", "Bob", "Charlie", "Dave");
+/*
+First: Alice
+Others: [ 'Bob', 'Charlie', 'Dave' ]
+*/
+```
+
+2. Replacing the old `arguments` object:
+
+```javascript
+function oldWay() {
+  console.log(arguments); // not an array, can't use array methods
+}
+
+function newWay(...args) {
+  console.log(args); // real array
+}
+```
+### ⚠️ Important Rules:
+
+* Only **one rest parameter** is allowed in a function.
+* It **must be the last parameter**.
+* It creates a **real array** (unlike the `arguments` object in older JS).
