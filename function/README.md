@@ -328,3 +328,47 @@ function newWay(...args) {
 * Only **one rest parameter** is allowed in a function.
 * It **must be the last parameter**.
 * It creates a **real array** (unlike the `arguments` object in older JS).
+
+---
+
+## 📚 What are Nested Functions?
+A **nested function** is simply a function defined **within another function**. The inner (nested) function is **accessible only within the outer function** and can use the variables of the outer function due to **lexical scoping.**
+
+### 🧠 Why Use Nested Functions?
+* **Encapsulation:** Keep helper functions private and not accessible from the outside.
+* **Organization:** Group related logic together.
+* **Closure Creation:** The inner function can "remember" variables from the outer function even after the outer function finishes.
+
+### 🧪 Basic Example:
+```javascript
+function outerFunction(name) {
+  function greet() {
+    console.log("Hello, " + name);
+  }
+
+  greet();
+}
+
+outerFunction("Alice"); // Output: Hello, Alice
+```
+> 🧠 `greet()` can access `name` from `outerFunction` due to **closure**.
+
+### 🧪 Returning a Nested Function:
+```javascript
+function outer(a) {
+  return function inner(b) {
+    return a + b;
+  };
+}
+
+const addFive = outer(5);  // inner(b) is returned
+console.log(addFive(3));   // Output: 8
+```
+> 🧠 Here, `inner()` “remembers” the value of `a` from `outer()` — this is a **closure**.
+
+### 📌 Things to Remember:
+
+* Nested functions are **not hoisted** outside the parent function.
+* Inner functions can **access all variables and parameters** of the outer function.
+* They're commonly used in **closures**, **callbacks**, and **module patterns**.
+---
