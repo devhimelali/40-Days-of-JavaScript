@@ -231,4 +231,44 @@ showAll("apple", "banana", "cherry");
 | **Can be more/fewer?** | Yes, JS handles missing/excess values | Yes, extra args ignored, missing = `undefined` |
 ---
 
+## 📚 What Are Default Parameters?
+**Default parameters** allow you to **set default values** for function parameters **if no value (or `undefined`) is passed** when the function is called.
 
+This makes your function more flexible and helps avoid `undefined` values.
+
+---
+### ✅ Basic Syntax:
+
+```javascript
+function functionName(param1 = defaultValue1, param2 = defaultValue2) {
+  // code block
+}
+```
+### 🧪 Example:
+```javascript
+function greet(name = "Guest") {
+  console.log("Hello, " + name);
+}
+
+greet("Alice"); // Output: Hello, Alice
+greet();        // Output: Hello, Guest
+```
+➡️ In this example, if you don’t pass an argument to `name`, it defaults to `"Guest"`.
+
+### 📌 Why Use Default Parameters?
+
+* ✔️ Avoids `undefined` values.
+* ✔️ Provides fallback values.
+* ✔️ Makes your code cleaner and easier to read.
+* ✔️ Prevents runtime errors when arguments are missing.
+
+### 🧪 Example with Multiple Defaults:
+```javascript
+function createUser(username = "Anonymous", age = 0) {
+  console.log(`User: ${username}, Age: ${age}`);
+}
+
+createUser("John", 25);   // User: John, Age: 25
+createUser("Jane");       // User: Jane, Age: 0
+createUser();             // User: Anonymous, Age: 0
+```
