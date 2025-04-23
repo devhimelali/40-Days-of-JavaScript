@@ -3,16 +3,17 @@ A function in JavaScript is a reusable block of code designed to perform a speci
 
 ---
 ## 🧠 Why Use Functions in JavaScript?
-1. **Reusability**
-   - Write once, use many times. You can call a function whenever you need it, instead of repeating the same code.
-   ```javascript
-   function greet(name) {
-        console.log("Hello, " + name);
-    }
 
-    greet("Alice");
-    greet("Bob");
-    ```
+**1. Reusability**
+- Write once, use many times. You can call a function whenever you need it, instead of repeating the same code.
+  ```javascript
+  function greet(name) {
+       console.log("Hello, " + name);
+   }
+
+   greet("Alice");
+   greet("Bob");
+   ```
    
 **2. Modularity** 
    - Break large programs into smaller, manageable chunks (functions). This makes your code cleaner and easier to understand.
@@ -27,12 +28,12 @@ A function in JavaScript is a reusable block of code designed to perform a speci
    - Functions help group related code together, making your codebase more structured and easier to navigate.
 
 **6. Return Values**
-   - Functions can return values, which can be useful for complex calculations or data processing.
-     ```javascript
-         function add(a, b) {
-            return a + b;
-         }
-        ```
+- Functions can return values, which can be useful for complex calculations or data processing.
+  ```javascript
+  function add(a, b) {
+     return a + b;
+  }
+     ```
     
 ## 📚 Declaring a Function
 A function definition consists of the ``function`` keyword, followed by:
@@ -114,4 +115,4 @@ greet("Alice"); // Output: Hello, Alice
     };
     ```
 ---
-## 📚 Parameter and Argument
+
