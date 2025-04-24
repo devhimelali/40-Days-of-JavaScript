@@ -372,3 +372,96 @@ console.log(addFive(3));   // Output: 8
 * Inner functions can **access all variables and parameters** of the outer function.
 * They're commonly used in **closures**, **callbacks**, and **module patterns**.
 ---
+
+## 📚 What is a Callback Function?
+A **callback function** is **a function passed as an argument to another function**, which is then **invoked (called) inside the outer function** to complete some kind of routine or action.
+
+### 🧠 Why Use Callback Functions?
+* Handle **asynchronous operations** (like fetching data, reading files, etc.).
+* Allow **custom behavior** in generic functions.
+*  Enable **reusability** and **flexibility** in your code.
+
+### 🧪 Example: Basic Callback
+```javascript
+function greet(name, callback) {
+  console.log("Hello, " + name);
+  callback();
+}
+
+function sayBye() {
+  console.log("Goodbye!");
+}
+
+greet("Alice", sayBye);
+// Output:
+// Hello, Alice
+// Goodbye!
+```
+> 🧠 In this example, `sayBye` is a callback function that is invoked inside the `greet` function.
+### 🧪 Example: Callback with Arguments
+```javascript
+function add(a, b, callback) {
+  const result = a + b;
+  callback(result);
+}
+
+function logResult(result) {
+  console.log("Result:", result);
+}
+
+add(2, 3, logResult);
+// Output: Result: 5
+```
+> 🧠 In this example, `logResult` is a callback function that takes the result as an argument and logs it.
+
+### 🧪 Example: Callback with Anonymous Function
+```javascript
+function processUserInput(callback) {
+  const name = "Bob";
+  callback(name);
+}
+
+processUserInput(function(name) {
+  console.log("Welcome, " + name);
+});
+
+// Output: Welcome, Bob
+```
+> 🧠 In this example, an **anonymous function** is used as a callback function.
+
+### 📌 Synchronous vs Asynchronous Callbacks
+####✅ Synchronous Callbacks:
+
+```javascript
+function calculate(num, callback) {
+  return callback(num);
+}
+
+function square(x) {
+  return x * x;
+}
+
+console.log(calculate(5, square)); // Output: 25
+```
+> 🧠 In this example, the callback function `square` is executed **synchronously**.
+
+####✅ Asynchronous Callbacks:
+
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data received!");
+  }, 1000);
+}
+
+fetchData(function(message) {
+  console.log(message); // Output after 1 sec: Data received!
+});
+```
+> 🧠 In this example, the callback function is executed **asynchronously** after a delay of 1 second.
+
+### 📌 Key Points:
+
+* Callbacks can be **named** or **anonymous**.
+* Useful in **event handling**, **APIs**, and **timers**.
+* Are the **foundation of promises** and **async/await**.
