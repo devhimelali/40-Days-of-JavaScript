@@ -650,3 +650,40 @@ console.log(square(4)); // Output: 16
 
 * Object methods (if you need this bound to the object)
 * Constructors (arrow functions cannot be used as constructors)
+
+---
+
+## 📚 What is an IIFE?
+An IIFE (Immediately Invoked Function Expression) is a function that runs as soon as it is defined.
+
+It is often used to create a private scope, avoiding polluting the global namespace.
+
+### 📝 Basic Syntax:
+```javascript
+(function() {
+  // code inside here runs immediately
+  console.log("This is an IIFE");
+})();
+```
+OR with arrow function:
+```javascript
+(() => {
+  console.log("Arrow Function IIFE");
+})();
+```
+
+### 🔍 Why Use IIFE?
+| **Reason** | **Explanation** |
+| --- |-----------------|
+| **Encapsulation** | Variables inside IIFE are not accessible from the outside (private scope). |
+| **Avoid Global Scope Pollution** | Prevents creating global variables/functions. |
+| **Immediate Execution** | Useful for code that should run once when the script loads.|
+
+### 🧪 Example:
+```javascript
+const result = (function(a, b) {
+  return a + b;
+})(5, 10);
+
+console.log(result); // Output: 15
+```
