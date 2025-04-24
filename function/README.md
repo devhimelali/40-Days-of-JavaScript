@@ -518,3 +518,79 @@ Pure functions are a big part of libraries and frameworks like:
 * `React` (with functional components)
 * `Redux` (reducers must be pure)
 * `Ramda`, `Lodash`, etc.
+
+---
+
+## 📚 What is a Higher-Order Function?
+A **Higher-Order Function** is a function that does **at least one** of the following:
+
+1. **Takes another function as an argument.**
+2. **Returns a function as a result.** 
+
+In simple terms:
+> A function that works with other functions — either taking them in, returning them, or both!
+
+### 🧪 Example 1: Passing a Function as an Argument
+```javascript
+function greet(name) {
+  return "Hello, " + name;
+}
+
+function processUserInput(callback) {
+  const name = "Alice";
+  console.log(callback(name));
+}
+
+processUserInput(greet); // Output: Hello, Alice
+```
+✅ `processUserInput` is a **higher-order function** because it accepts `greet` as a **callback**.
+
+### 🧪 Example 2: Returning a Function
+```javascript
+function multiplier(factor) {
+  return function(number) {
+    return number * factor;
+  };
+}
+
+const double = multiplier(2);
+console.log(double(5)); // Output: 10
+```
+✅ `multiplier` is a **higher-order function** because it **returns a function**.
+
+### 🎯 Real-World Examples (Built-in HOFs)
+
+JavaScript has many built-in higher-order functions, especially for arrays:
+
+* ✅ `forEach`
+```javascript
+  [1, 2, 3].forEach(function(num) {
+  console.log(num);
+  });
+```
+
+* ✅ `map`
+```javascript
+  [1, 2, 3].map(function(num) {
+  return num * 2;
+  });
+```
+* ✅ `filter`
+```javascript
+  [1, 2, 3, 4, 5].filter(function(num) {
+  return num % 2 === 0;
+  });
+```
+* ✅ `reduce`
+```javascript
+  [1, 2, 3].reduce(function(total, num) {
+  return total + num;
+  });
+```
+
+### 📦 Benefits of Higher-Order Functions
+
+* 🧠 **Abstraction**: Separate the “what” from the “how.”
+* 🔄 **Reusability**: Reuse logic with different callbacks.
+* 🧼 **Cleaner Code:** Shorter, more expressive code.
+
