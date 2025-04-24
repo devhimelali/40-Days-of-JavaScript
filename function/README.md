@@ -465,3 +465,56 @@ fetchData(function(message) {
 * Callbacks can be **named** or **anonymous**.
 * Useful in **event handling**, **APIs**, and **timers**.
 * Are the **foundation of promises** and **async/await**.
+
+---
+## 📚 What is a Pure Function?
+A **pure function** is a function that:
+1. Given the same input, always returns the same output, and
+2. Does not cause any side effects (like modifying global variables, logging to the console, or changing a DOM element).
+
+### 🧠 Characteristics of Pure Functions:
+| **Feature** | **Description** |
+| --- | --- |
+| **Deterministic** | Same input → same output. |
+| **No Side Effects** | Doesn’t modify external state. |
+| **Self-contained** | Only depends on its input parameters. |
+
+### 🧪 Example: Pure Function
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // Always returns 5
+```
+*  Same output for same inputs.
+*  Doesn’t modify anything outside its scope.
+
+### ❌ Example: Not a Pure Function
+```javascript
+let count = 0;
+
+function increment() {
+  count++;
+  return count;
+}
+
+console.log(increment()); // Always returns 1
+console.log(increment()); // Always returns 2
+```
+
+* ❌ Modifies count (external variable) → **side effect**.
+* ❌ Result depends on external state → **not pure**.
+
+### 📦 Why Use Pure Functions?
+* **Easier to test** (no setup/teardown needed).
+* **Reliable** and predictable.
+* Great for **debugging** and **reasoning** about code.
+* Encourages **immutable** data handling.
+
+### 🧠 Common Use in Functional Programming
+Pure functions are a big part of libraries and frameworks like:
+
+* `React` (with functional components)
+* `Redux` (reducers must be pure)
+* `Ramda`, `Lodash`, etc.
