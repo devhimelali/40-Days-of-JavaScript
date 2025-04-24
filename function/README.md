@@ -594,3 +594,59 @@ JavaScript has many built-in higher-order functions, especially for arrays:
 * 🔄 **Reusability**: Reuse logic with different callbacks.
 * 🧼 **Cleaner Code:** Shorter, more expressive code.
 
+---
+
+## 📚 What is an Arrow Function?
+Arrow functions, introduced in ES6, are a **shorthand** for writing function expressions.
+
+They are especially useful for **short functions** and **callback-based** code.
+
+### 📝 Basic Syntax:
+
+```javascript
+const functionName = (parameters) => {
+  // function body
+};
+```
+
+### 🧪 Example: Simple Arrow Function
+```javascript
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // Output: 5
+```
+
+### ✂️ Shorthand for Single-Line Function
+If the function body is just a single return statement, you can omit the `{}` and `return`:
+```javascript
+const square = n => n * n;
+
+console.log(square(4)); // Output: 16
+```
+> Note: If there is only one parameter, you can also omit the parentheses.
+
+### ⚠️ Arrow Function vs Regular Function
+
+| **Feature**              | **Arrow Function** | **Regular Function**                                 |
+|--------------------------| --- |------------------------------------------------------|
+| **Syntax**               | Concise, uses` =>` | Uses the `function` keyword                          |
+| `this` **Binding**       | Lexically binds `this` (inherits from parent scope) | Has its own `this` depending on how it's called      |
+| **Hoisting**             | Not hoisted | Hoisted (can be used before declaration)             |
+| **Constructor Usage**    | ❌ Cannot be used as constructors | ✅ Can be used with new to create objects             |
+| `arguments` **Object**   | Not available | Available inside the function                        |
+| **Use Case**             | Best for callbacks, short functions, and array methods | Good for defining reusable or object methods         |
+| **Code Readability**     | More concise | More verbose, but sometimes clearer in complex logic |
+| **Return (Single Line)** | Implicit return if no braces | Must use return keyword explicitly                   |
+
+### 🛠️ When to Use Arrow Functions
+
+✅ Great for:
+
+* Array methods (`map`, `filter`, `reduce`, etc.)
+* Short callbacks
+* Inline event handlers in frameworks like React
+* Functions where you want to preserve the outer `this`
+
+❌ Avoid for:
+
+* Object methods (if you need this bound to the object)
+* Constructors (arrow functions cannot be used as constructors)
